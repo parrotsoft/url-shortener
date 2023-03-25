@@ -1,0 +1,47 @@
+{
+    "name": "mlopez/url-shortener",
+    "type": "library",
+    "keywords": ["laravel","url shortener", "url"],
+    "license": "MIT",
+    "autoload": {
+        "psr-4": {
+            "Mlopez\\UrlShortener\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Mlopez\\UrlShortener\\Test\\": "test/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Miguel Angel Lopez Ariza",
+            "email": "lopezarizamiguel@gmail.com"
+        }
+    ],
+    "require": {
+        "php": ">7.2",
+        "illuminate/support": "^10.0"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "10.0.0"
+    },
+    "scripts": {
+        "test": "vendor/bin/phpunit test",
+        "coverage": "php -dxdebug.mode=coverage vendor/bin/phpunit --coverage-clover='reports/coverage/coverage.xml' --coverage-html='reports/coverage'"
+    },
+    "minimum-stability": "dev",
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Mlopez\\UrlShortener\\UrlShortenerServiceProvider"
+            ],
+            "migrations": [
+                "src/database/migrations/2014_05_16_000000_create_links_table.php"
+            ],
+            "commands": [
+                "src/Console/Commands/InstallCommand.php"
+            ]
+        }
+    }
+}
